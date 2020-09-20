@@ -1,0 +1,11 @@
+zones:
+- name: us-east-2a
+  subnetID: subnet-0f4cef4dbaee5d337
+- name: us-east-2b
+  subnetID: subnet-06687dadc4f7664c9
+- name: us-east-2c
+  subnetID: subnet-0668c99bdf6741648
+securityGroupIDs:
+- sg-03a207580fd0eb6a6
+env:
+  AWS_VPC_K8S_CNI_CUSTOM_NETWORK_CFG: true

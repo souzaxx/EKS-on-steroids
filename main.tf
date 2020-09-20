@@ -6,12 +6,6 @@ module "eks" {
   subnets         = module.vpc.public_subnets
   enable_irsa     = true
 
-  tags = {
-    Environment = "test"
-    GithubRepo  = "terraform-aws-eks"
-    GithubOrg   = "terraform-aws-modules"
-  }
-
   worker_groups_launch_template = [
     {
       name                     = "spot-1"
@@ -37,30 +31,4 @@ module "eks" {
       ]
     },
   ]
-
-
-  # node_groups_defaults = {
-  #   ami_type  = "AL2_x86_64"
-  #   disk_size = 50
-  # }
-
-  # node_groups = {
-  #   example = {
-  #     desired_capacity = 1
-  #     max_capacity     = 10
-  #     min_capacity     = 1
-
-  #     instance_type = "m5.large"
-  #     k8s_labels = {
-  #       Environment = "test"
-  #       GithubRepo  = "terraform-aws-eks"
-  #       GithubOrg   = "terraform-aws-modules"
-  #     }
-  #     additional_tags = {
-  #       "k8s.io/cluster-autoscaler/enabled"   = true,
-  #       "k8s.io/cluster-autoscaler/${local.cluster_name}"   = true,
-  #       ExtraTag = "example"
-  #     }
-  #   }
-  # }
 }
